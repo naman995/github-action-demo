@@ -1,0 +1,16 @@
+name: Testing configuration variable 
+
+on: 
+  workflow_dispatch
+
+env: 
+  cloud: google-cloud
+
+jobs:
+  greeting_jobs:
+    runs-on: ubuntu-latest
+    env: 
+      Greetings: Hello
+    steps: 
+      - name: "Say Hello to Naman"
+        run: echo "$Greetings $First_Name is using $cloud with project ${{ vars.PROJECT_ID }}"
